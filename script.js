@@ -233,90 +233,90 @@ function switchBackGround(value) {
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/xizhou/xizhou/xizhou_02.png)";
         onload
         document.body.style.backgroundImage = backgroundImg;
-    } else if (value == 10) {
+    } else if (value == 1) {
         text = '春秋';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/chunqiu/chunqiu/chunqiu_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 20) {
+    } else if (value == 2) {
         text = '戰國';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/zhanguo/zhanguo/zhanguo_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 30) {
+    } else if (value == 3) {
         text = '秦代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/qin/qin/qin_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 40) {
+    } else if (value == 4) {
         text = '西漢';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/xihan/xihan/xihan_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 50) {
+    } else if (value == 5) {
         text = '東漢';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/donghan/donghan/donghan_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 60) {
+    } else if (value == 6) {
         text = '三國';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/sanguo/sanguo/sanguo_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 70) {
+    } else if (value == 7) {
         text = '西晉';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/xijin/xijin/xijin_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 80) {
+    } else if (value == 8) {
         text = '東晉';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/dongjin/dongjin/dongjin_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 90) {
+    } else if (value == 9) {
         text = '南北朝';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/nanbeichao/nanbeichao/nanbeichao.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 100) {
+    } else if (value == 10) {
         text = '隋代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/sui/sui/sui_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 110) {
+    } else if (value == 11) {
         text = '唐代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/tang/tang/tang_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 120) {
+    } else if (value == 12) {
         text = '北宋';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/beisong/beisong/beisong_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 130) {
+    } else if (value == 13) {
         text = '南宋';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/nansong/nansong/nansong_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 140) {
+    } else if (value == 14) {
         text = '元代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/yuan/yuan/yuan_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 150) {
+    } else if (value == 15) {
         text = '明代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/ming/ming/ming_02.png)";
         document.body.style.backgroundImage = backgroundImg;
 
-    } else if (value == 160) {
+    } else if (value == 16) {
         text = '清代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/qing/qing/qing_02.png)";
         document.body.style.backgroundImage = backgroundImg;
-    } else if (value == 170) {
+    } else if (value == 17) {
         text = '中華民國';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/zhonghuaminguo/zhonghuaminguo/zhonghuaminguo_02.png)";
         document.body.style.backgroundImage = backgroundImg;
-    } else if (value == 180) {
+    } else if (value == 18) {
         text = '現代';
         let backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/zhongguo/zhongguo/zhongguo.png)";
         document.body.style.backgroundImage = backgroundImg;

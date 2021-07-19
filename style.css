@@ -255,7 +255,7 @@ background-image.faded-out {
     top: -0.2941176471rem;
     z-index: 2;
     left: 8px;
-    right: 0px;
+    right: 8px;
     display: flex;
     justify-content: space-between;
     margin: 0 0px;
@@ -275,13 +275,13 @@ background-image.faded-out {
 .range-slider-ticks2__label {
     font-size: 1.1176470588rem;
     padding-top: 1.7647058824rem;
-    margin-left: 3.5rem;
-    margin-right: 3rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
     color: #fff;
 }
 
 .range-slider-ticks2__label.is-selected {
-    font-size: 22px;
+    /* font-size: 22px; */
     color: #15208a;
 }
 

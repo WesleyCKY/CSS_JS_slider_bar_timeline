@@ -87,6 +87,7 @@ body {
     transition: background 1.5s linear;
     transition: 0.5s ease-out;
     animation: glow 1s ease-in-out infinite alternate;
+    touch-action: pan-y, pan-x;
 }
 
 body image-background {

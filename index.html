@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" >
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Hist Timeline</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <title>CodePen - Custom Slider with Contained Value</title>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
-
 <body>
-    <!-- <h3>Timeline</h3> -->
-    <div class="vr-2">
-        <input id="range-slider-input" type="range" role="slider" aria-valuemin="0" aria-valuemax="18" min="0" max="18" step="1" value="0" values='{
-			"0": "西周",  
-			"1": "春秋",
-			"2": "戰國",
-			"3": "秦代",
-			"4": "西漢",
-			"5": "東漢",
-			"6": "三國",
-			"7": "西晉",
-			"8": "東晉",
-			"9": "南北朝",
-			"10": "隋代",
-			"11": "唐代",
-			"12": "北宋",
-			"13": "南宋",
-			"14": "元代",
-			"15": "明代",
-			"16": "清代",
-			"17": "中華民國",
-			"18": "中華人民共和國"  
-			}'>
-    </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-    <script src="./script.js"></script>
+<!-- partial:index.partial.html -->
+<div id="mv" class="slider">
+  <input type="range" min="-1122" max="2021" value="-1100" step="1" list="ticks1">
+	<div class="price-range-slider__points">
+		<span class="dot" style="left: 1.8vw;"></span>  
+		<span class="dot" style="left: 11.9vw;"></span>
+		<span class="dot" style="left: 22.1vw;"></span>
+		<span class="dot" style="left: 27.2vw;"></span>
+		<span class="dot" style="left: 27.9vw;"></span>
+		<span class="dot" style="left: 34vw"></span> 
+		<span class="dot" style="left: 39.5vw;"></span>
+		<span class="dot" style="left: 40.7vw;"></span>
+		<span class="dot" style="left: 42.3vw;"></span>
+		<span class="dot" style="left: 45vw;"></span> 
+		<span class="dot" style="left: 49.7vw;"></span>
+		<span class="dot" style="left: 50.9vw;"></span>
+		<span class="dot" style="left: 60.4vw"></span>
+		<span class="dot" style="left: 65vw"></span> 
+		<span class="dot" style="left: 70vw"></span>
+		<span class="dot" style="left: 72.5vw"></span> 
+		<span class="dot" style="left: 80.8vw"></span> 
+		<span class="dot" style="left: 88.4vw"></span> 
+		<span class="dot" style="left: 89vw"></span> 
+	</div>
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script  src="./script.js"></script>
 
 </body>
-
 </html>

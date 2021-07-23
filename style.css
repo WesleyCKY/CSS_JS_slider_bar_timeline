@@ -101,6 +101,10 @@ body {
     transition: background 1.5s linear;
 }
 
+body .disable-dbl-tap-zoom {
+    touch-action: manipulation;
+}
+
 background-image {
     transition: opacity 4000ms;
     will-change: opacity;

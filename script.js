@@ -1,11 +1,11 @@
 const SLIDER_CONTAINER = ".slider";
 const SLIDER_RANGE_INPUT = "input[type='range']";
 let link = '';
+
 // custom sliding bar
 document.querySelectorAll(".__range-step").forEach(function(ctrl) {
     var el = ctrl.querySelector('input');
     var output = ctrl.querySelector('output');
-    var newPoint, newPlace, offset;
     el.oninput = function() {
         // colorize step options
         ctrl.querySelectorAll("option").forEach(function(opt) {
@@ -140,7 +140,7 @@ function updateSliderValue($input, $valueContainer) {
             marginTop: `-2.6rem`,
             fontSize: `20px`,
             bottom: `100%`,
-            textAlign: `left`,
+            textAlign: `center`,
         });
     } else {
         $valueContainer.text(`${text} ${value}`).css({
@@ -152,11 +152,8 @@ function updateSliderValue($input, $valueContainer) {
             textAlign: `left`,
         });
     }
-
-
-
-
-    // $valueContainer.contents().wrap('<a href=\"' + link + '\"></a>');
+    // Wrap the text into a link...
+    // $valueContainer.contents().wrap('<a href=\"' + link + '\"></a>'); 
 }
 
 function preloadImages(array) {
@@ -202,10 +199,12 @@ preloadImages([
     "https://wesleycky.github.io/ARWeb/assets/png/map/zhonghuaminguo/zhonghuaminguo/zhonghuaminguo_02.png",
     "https://wesleycky.github.io/ARWeb/assets/png/map/zhongguo/zhongguo/zhongguo.png"
 ]);
+
 // link to other source when clicked on empty sapce of body 
 document.body.onclick = function(e) {
     if (e.target === document.body) {
         window.location = link;
     }
 }
+
 listenForSliderChanges();

@@ -2,39 +2,40 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Custom Slider with Contained Value</title>
+  <title>HistTimeline</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <div id="mv" class="slider">
-  <input type="range" min="-1122" max="2021" value="-1100" step="1" list="ticks1">
-	<div class="price-range-slider__points">
-		<span class="dot" style="left: 1.8vw;"></span>  
-		<span class="dot" style="left: 11.9vw;"></span>
-		<span class="dot" style="left: 22.1vw;"></span>
-		<span class="dot" style="left: 27.2vw;"></span>
-		<span class="dot" style="left: 27.9vw;"></span>
-		<span class="dot" style="left: 34vw"></span> 
-		<span class="dot" style="left: 39.5vw;"></span>
-		<span class="dot" style="left: 40.7vw;"></span>
-		<span class="dot" style="left: 42.3vw;"></span>
-		<span class="dot" style="left: 45vw;"></span> 
-		<span class="dot" style="left: 49.7vw;"></span>
-		<span class="dot" style="left: 50.9vw;"></span>
-		<span class="dot" style="left: 60.4vw"></span>
-		<span class="dot" style="left: 65vw"></span> 
-		<span class="dot" style="left: 70vw"></span>
-		<span class="dot" style="left: 72.5vw"></span> 
-		<span class="dot" style="left: 80.8vw"></span> 
-		<span class="dot" style="left: 88.4vw"></span> 
-		<span class="dot" style="left: 89vw"></span> 
+  <input type="range" min="-1122" max="2021" value="-1122" step="1" list="ticks1">
+	<div class="range-slider__points">
+		<!-- formula:  --> 
+		<!-- vm = year of start+1122(calibrate all the year started from zero)/(timeRange)%-->
+		<!-- px = -vm -->
+		<!-- TODO: Create a function to generate this set of <span> -->
+		<span class="dot" style="transform: translateX(1.5vw) translateX(-1.5px);"></span>
+		<span class="dot" style="transform: translateX(12.2vw) translateX(-12.2px);"></span>
+		<span class="dot" style="transform: translateX(23.9vw) translateX(-23.9px);"></span>
+		<span class="dot" style="transform: translateX(29.7vw) translateX(-29.7px);"></span>
+		<span class="dot" style="transform: translateX(30.3vw) translateX(-30.3px);;"></span>
+		<span class="dot" style="transform: translateX(37.5vw) translateX(-37.5px);;"></span>
+		<span class="dot" style="transform: translateX(42.7vw) translateX(-43.7px);;"></span>
+		<span class="dot" style="transform: translateX(45.1vw) translateX(-45.1px);;"></span>
+		<span class="dot" style="transform: translateX(46.7vw) translateX(-46.7px);;"></span>
+		<span class="dot" style="transform: translateX(50.1vw) translateX(-50.1px);"></span>
+		<span class="dot" style="transform: translateX(55.2vw) translateX(-55.2px);"></span>
+		<span class="dot" style="transform: translateX(56.4vw) translateX(-56.4px);"></span>
+		<span class="dot" style="transform: translateX(67.2vw) translateX(-67.2px);"></span>
+		<span class="dot" style="transform: translateX(72.6vw) translateX(-72.6px);;"></span>
+		<span class="dot" style="transform: translateX(77.1vw) translateX(-77.1px);;"></span>
+		<span class="dot" style="transform: translateX(80.2vw) translateX(-80.2px);;"></span>
+		<span class="dot" style="transform: translateX(89vw) translateX(-89px);;"></span>
+		<span class="dot" style="transform: translateX(97vw) translateX(-97px);"></span>
+		<span class="dot" style="transform: translateX(97.8vw) translateX(-97.8px);"></span>
 	</div>
 </div>
-
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script  src="./script.js"></script>
-
 </body>
 </html>

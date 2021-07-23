@@ -8,7 +8,6 @@
 .sliderticks {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
 }
 
 .sliderticks p {
@@ -16,7 +15,6 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 1px;
     background: #D3D3D3;
     height: 10px;
     line-height: 40px;
@@ -25,7 +23,6 @@
 
 .value {
     text-align: center;
-    text-shadow: -1px -1px 0 #999, -1px -1px 0 #999, -1px -1px 0 #999, -1px -1px 0 #999;
     font-weight: bold;
     color: #100;
     font-size: 1.3rem;
@@ -33,9 +30,12 @@
 
 .slider {
     position: relative;
-    width: 100%;
-    padding-top: 19px;
-    transition: padding-top;
+    align-items: flex-end;
+    width: 100vw;
+    padding-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    /* transition: padding-top; */
 }
 
 .slider input[type=range] {
@@ -52,7 +52,6 @@
     width: 100%;
     height: 8px;
     background: #f0ede6;
-    border: 0px solid black;
     border-radius: 25px;
     margin-bottom: 6rem;
 }
@@ -63,9 +62,12 @@
     border-left: 22px solid transparent;
     border-right: 22px solid transparent;
     border-bottom: 22px solid #15208a;
+    border-top: 0px transparent;
     margin-top: 1.35rem;
     -webkit-appearance: none;
     background: transparent;
+    cursor: pointer;
+    transform: translateX();
 }
 
 .slider>div {
@@ -74,32 +76,21 @@
     top: 0;
     color: black;
     font-weight: bold;
-    /* font-size: 1rem; */
-    /* text-align: start; */
-    /* text-align: top; */
-    /* text-align-last: right; */
     text-shadow: -1px -1px 0 #999, -1px -1px 0 #999, -1px -1px 0 #999, -1px -1px 0 #999;
     transition: 0.5s ease-in-out;
     line-height: 98%;
-    /* margin-bottom: 5rem; */
-    /* animation: glow 1s ease-in-out infinite alternate; */
 }
 
 body {
     min-height: 100vh;
     margin: 0;
-    padding: 0;
     display: flex;
     align-items: flex-end;
-    padding: 0 32px;
     font-family: "Helvetica", sans-serif;
-    background-image: url(https://placeimg.com/801/801/nature);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100vw;
     color: #fff;
     overflow: hidden;
-    height: 90%;
-    /* ges Hoehe der Seite -> weitere Hoehenangaben werden relativ hierzu ausgewertet */
     overflow: hidden;
     /*  hide scrollbars */
     opacity: 1;
@@ -110,29 +101,12 @@ body {
     transition: background 1.5s linear;
 }
 
-body image-background {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    max-width: none !important;
-    max-height: none !important;
-    display: block !important;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
 background-image {
     transition: opacity 4000ms;
     will-change: opacity;
     position: relative !important;
     width: 100% !important;
-    /* height: 100% !important; */
+    height: 100% !important;
     margin: 0 !important;
     max-width: none !important;
     max-height: none !important;
@@ -153,8 +127,6 @@ background-image.faded-out {
 .__range input {
     outline: none;
     -webkit-appearance: none;
-    background-color: #aaa;
-    height: 3px;
     width: 100%;
     margin: 10px auto;
 }
@@ -163,22 +135,7 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
     cursor: pointer;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
     background: #a4b162;
-    border-radius: 0px;
-    border: 2px solid rgba(0, 0, 0, 0);
-}
-
-input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    border: 1px solid #000000;
-    height: 16px;
-    width: 16px;
-    border-radius: 0px;
-    background: #e7e7e7;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -5px;
 }
 
 .__range-step {
@@ -210,9 +167,6 @@ input[type=range]::-webkit-slider-thumb {
 
 .__range-step datalist option {
     width: 10px;
-    height: 1 0px;
-    min-height: 10px;
-    padding: 0;
     line-height: 40px;
 }
 
@@ -220,13 +174,12 @@ input[type=range]::-webkit-slider-thumb {
     margin: 10px 40px;
 }
 
-.price-range-slider__points span {
+.range-slider__points span {
     cursor: pointer;
     margin-left: 0px;
     margin-top: 55px;
-    min-width: 0px;
+    min-width: 1px;
     position: absolute;
-    text-align: center;
 }
 
 .dot {

@@ -2,24 +2,6 @@ const SLIDER_CONTAINER = ".slider";
 const SLIDER_RANGE_INPUT = "input[type='range']";
 let link = '';
 
-// custom sliding bar
-document.querySelectorAll(".__range-step").forEach(function(ctrl) {
-    var el = ctrl.querySelector('input');
-    var output = ctrl.querySelector('output');
-    el.oninput = function() {
-        // colorize step options
-        ctrl.querySelectorAll("option").forEach(function(opt) {
-            if (opt.value <= el.valueAsNumber)
-                opt.style.backgroundColor = '#48530d';
-            else
-                opt.style.backgroundColor = '#a4b162';
-        });
-    };
-    el.oninput();
-});
-
-
-
 /** Initialize sliders and listen for value changes. */
 function listenForSliderChanges() {
     $(SLIDER_CONTAINER).each(function() {
@@ -48,6 +30,7 @@ function updateSliderValue($input, $valueContainer) {
 
     let backgroundImg = "";
     // console.log(value);
+    // value is ranged based on historical year
     if (value <= -771) {
         text = '西周';
         backgroundImg = "url(https://wesleycky.github.io/ARWeb/assets/png/map/xizhou/xizhou/xizhou_02.png)";
@@ -127,11 +110,12 @@ function updateSliderValue($input, $valueContainer) {
     } else {
         text = "";
     }
+    // trigger background change
     document.body.style.backgroundImage = backgroundImg;
+
     // Clamp within 0 - 100
     const distanceFromLeft = ((value - min) * 100) / (max - min);
 
-    // $valueContainer.div.appendChild(link);
     // Contain value within container bounds
     if (value < 0) {
         $valueContainer.text(`${text} 前${value * -1}`).css({
@@ -152,6 +136,7 @@ function updateSliderValue($input, $valueContainer) {
             textAlign: `left`,
         });
     }
+
     // Wrap the text into a link...
     // $valueContainer.contents().wrap('<a href=\"' + link + '\"></a>'); 
 }

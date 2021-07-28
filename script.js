@@ -3,6 +3,26 @@ const SLIDER_RANGE_INPUT = "input[type='range']";
 let link = '';
 
 /** Initialize sliders and listen for value changes. */
+function OnloadlistenForSliderChanges() {
+    $(SLIDER_CONTAINER).each(function() {
+        // Prepend value container
+        const $valueContainer = $("<div />");
+        $(this).prepend($valueContainer);
+        const $input = $(this).find(SLIDER_RANGE_INPUT);
+        $input.val() = getCookie(testCookie);
+
+        // Run on initial
+        updateSliderValue($input, $valueContainer);
+
+        // Listen for input changes
+        $input.on("input", function() {
+            updateSliderValue($input, $valueContainer);
+        });
+    });
+}
+
+
+/** Initialize sliders and listen for value changes. */
 function listenForSliderChanges() {
     $(SLIDER_CONTAINER).each(function() {
         // Prepend value container
@@ -187,9 +207,45 @@ preloadImages([
 
 // link to other source when clicked on empty sapce of body 
 document.body.onclick = function(e) {
-    if (e.target === document.body) {
-        window.location = link;
+        if (e.target === document.body) {
+            window.location = link;
+        }
     }
+    // cookie
+
+
+function setLoanCookie() {
+    var selectedValue = document.getElementById("loan").value;
+    // var selectedSlider = document.getElementById("")
+    setCookie('testCookie', selectedValue);
+    console.log("Cookie set: ", selectedValue);
 }
+
+//sample cookie
+function getCookie(cname) {
+    var name = cname + '=';
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            console.log("Getting cookie...");
+            console.log("cookie value: ", c.substring(name.length, c.length));
+            return c.substring(name.length, c.length);
+        }
+    }
+    return '';
+}
+
+function setCookie(cname, value) {
+    document.cookie = cname + '=' + value + ';' + ';path=/';
+}
+
+// setCookie('testCookie', 123);
+// console.log(getCookie('testCookie'));
+
 
 listenForSliderChanges();

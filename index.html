@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="mv" class="slider">
-  <input type="range" min="-1122" max="2021" value="-1122" step="1" list="ticks1">
+  <input id="loan" type="range" min="-1122" max="2021" value ="2021" step="1" list="ticks1" onload="OnloadlistenForSliderChanges()" onchange="setLoanCookie()">
 	<div class="range-slider__points">
 		<!-- formula:  --> 
 		<!-- vm = year of start+1122(calibrate all the year started from zero)/(timeRange)%-->

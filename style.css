@@ -3,7 +3,7 @@ label {
     padding: 1rem 0;
     font-size: 3.5vh;
     text-align: right;
-    top: -70vh;
+    top: -60vh;
     right: 0vw;
     align-items: center;
     position: absolute;
@@ -24,7 +24,7 @@ label {
 .range__amount {
     position: absolute;
     /* transform: translateY(-91vh) translateX(-40px) translateX(40vw); */
-    top: -60vh;
+    top: -50vh;
     right: 0vw;
     height: 1vh;
     width: 15vw;

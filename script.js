@@ -7,11 +7,8 @@ var $valueContainer;
 function onInputChangeUpdatePosition() {
     let text = '';
     let backgroundImg = '';
-    console.log("enter onInputChangeUpdatePosition");
     const $input = $(SLIDER_CONTAINER).find(SLIDER_RANGE_INPUT);
-    console.log($input.val());
     text = checkDynasty($input.val(), text, backgroundImg);
-    console.log(text);
     updateValueContainer($input.val(), $input.prop("min"), $input.prop("max"), $valueContainer, text);
 }
 
@@ -23,7 +20,6 @@ function listenForSliderChanges() {
         // Prepend value container
         $valueContainer = $("<div />");
         $valueContainer.id = "myid";
-
         $(this).prepend($valueContainer);
         const $input = $(this).find(SLIDER_RANGE_INPUT);
         // Run on initial
@@ -158,9 +154,6 @@ function updateSliderValue($input, $valueContainer) {
     // value is ranged based on historical year
     text = checkDynasty(value, text, backgroundImg);
     updateValueContainer(value, min, max, $valueContainer, text);
-
-    // Wrap the text into a link...
-    // $valueContainer.contents().wrap('<a href=\"' + link + '\"></a>'); 
 }
 
 function preloadImages(array) {
@@ -217,9 +210,7 @@ document.body.onclick = function(e) {
 // cookie
 function setLoanCookie() {
     var selectedValue = document.getElementById("loan").value;
-    // var selectedSlider = document.getElementById("")
     setCookie('testCookie', selectedValue);
-    // console.log("Cookie set: ", selectedValue);
 }
 
 //sample cookie
@@ -233,8 +224,6 @@ function getCookie(cname) {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-            // console.log("Getting cookie...");
-            // console.log("cookie value: ", c.substring(name.length, c.length));
             return c.substring(name.length, c.length);
         }
     }

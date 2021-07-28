@@ -12,7 +12,6 @@ function onInputChangeUpdatePosition() {
     console.log($input.val());
     text = checkDynasty($input.val(), text, backgroundImg);
     console.log(text);
-    // console.log(document.getElementById("myid").text());
     updateValueContainer($input.val(), $input.prop("min"), $input.prop("max"), $valueContainer, text);
 }
 

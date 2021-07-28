@@ -1,3 +1,51 @@
+label {
+    color: #000000;
+    padding: 1rem 0;
+    font-size: 2rem;
+    text-align: right;
+    top: -61vh;
+    right: 19vw;
+    align-items: center;
+    position: absolute;
+    text-align: right;
+    font-weight: bold;
+    margin: 2rem;
+    /* transform: translateY(-89.5vh) translateY(-0.5px) translateX(-28px) translateX(28vw); */
+    text-shadow: -2px -2px 0 #999, -2px -2px 0 #999, -2px -2px 0 #999, -2px -2px 0 #999;
+    /* margin-right: 1rem; */
+}
+
+
+/* input box */
+
+.range__amount {
+    position: absolute;
+    /* transform: translateY(-91vh) translateX(-40px) translateX(40vw); */
+    top: -60vh;
+    right: 0vw;
+    height: 1vh;
+    width: 15vw;
+    padding: 1rem 0;
+    margin: 2rem;
+    background-color: rgb(212, 217, 230);
+    outline: #100;
+    -webkit-appearance: none;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 25px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+/* input~span {
+    transition: top .7s ease;
+    position: absolute;
+    top: 20px;
+} */
+
 .tick {
     text-align: center;
     color: #100;

@@ -1,55 +1,68 @@
 const SLIDER_CONTAINER = ".slider";
 const SLIDER_RANGE_INPUT = "input[type='range']";
+const range__amount = ".range__amount";
 let link = '';
+var $valueContainer;
 
-/** Initialize sliders and listen for value changes. */
-function OnloadlistenForSliderChanges() {
-    $(SLIDER_CONTAINER).each(function() {
-        // Prepend value container
-        const $valueContainer = $("<div />");
-        $(this).prepend($valueContainer);
-        const $input = $(this).find(SLIDER_RANGE_INPUT);
-        $input.val() = getCookie(testCookie);
-
-        // Run on initial
-        updateSliderValue($input, $valueContainer);
-
-        // Listen for input changes
-        $input.on("input", function() {
-            updateSliderValue($input, $valueContainer);
-        });
-    });
+function onInputChangeUpdatePosition() {
+    let text = '';
+    let backgroundImg = '';
+    console.log("enter onInputChangeUpdatePosition");
+    const $input = $(SLIDER_CONTAINER).find(SLIDER_RANGE_INPUT);
+    console.log($input.val());
+    text = checkDynasty($input.val(), text, backgroundImg);
+    console.log(text);
+    // console.log(document.getElementById("myid").text());
+    updateValueContainer($input.val(), $input.prop("min"), $input.prop("max"), $valueContainer, text);
 }
 
+var tempVal = 2021;
 
 /** Initialize sliders and listen for value changes. */
 function listenForSliderChanges() {
     $(SLIDER_CONTAINER).each(function() {
         // Prepend value container
-        const $valueContainer = $("<div />");
+        $valueContainer = $("<div />");
+        $valueContainer.id = "myid";
+
         $(this).prepend($valueContainer);
         const $input = $(this).find(SLIDER_RANGE_INPUT);
-
         // Run on initial
         updateSliderValue($input, $valueContainer);
-
         // Listen for input changes
         $input.on("input", function() {
             updateSliderValue($input, $valueContainer);
-
         });
     });
 }
 
-/** Update text value of a given container based on a range input. */
-function updateSliderValue($input, $valueContainer) {
-    let value = $input.val();
-    const min = $input.prop("min");
-    const max = $input.prop("max");
-    let text = '';
+function updateValueContainer(value, min, max, $valueContainer, text) {
+    const distanceFromLeft = ((value - min) * 100) / (max - min);
 
-    let backgroundImg = "";
-    // console.log(value);
+    // Contain value within container bounds
+    if (value < 0) {
+        $valueContainer.text(`${text} 前${value * -1}`).css({
+            left: `calc(${distanceFromLeft}%)`,
+            transform: `translateX(-${distanceFromLeft}%)`,
+            marginTop: `-2.6rem`,
+            fontSize: `20px`,
+            bottom: `100%`,
+            textAlign: `center`,
+        });
+    } else {
+        $valueContainer.text(`${text} ${value}`).css({
+            left: `calc(${distanceFromLeft}%)`,
+            transform: `translateX(-${distanceFromLeft}%)`,
+            marginTop: `-2.6rem`,
+            fontSize: `20px`,
+            bottom: `100%`,
+            textAlign: `left`,
+        });
+    }
+
+}
+
+function checkDynasty(value, text, backgroundImg) {
     // value is ranged based on historical year
     if (value <= -771) {
         text = '西周';
@@ -128,34 +141,24 @@ function updateSliderValue($input, $valueContainer) {
         backgroundImg = "url(http://eduarapp.iotsolution.hk/tpl/ARWeb/assets/png/map/zhongguo/zhongguo/zhongguo.png)";
         link = 'http://eduarapp.iotsolution.hk/collection/tc/dynasty19';
     } else {
-        text = "";
+        text = "不符合";
     }
-    // trigger background change
+
     document.body.style.backgroundImage = backgroundImg;
+    return text;
+}
 
-    // Clamp within 0 - 100
-    const distanceFromLeft = ((value - min) * 100) / (max - min);
+/** Update text value of a given container based on a range input. */
+function updateSliderValue($input, $valueContainer) {
+    let value = $input.val();
+    const min = $input.prop("min");
+    const max = $input.prop("max");
+    let text = $input.text();
+    let backgroundImg = "";
 
-    // Contain value within container bounds
-    if (value < 0) {
-        $valueContainer.text(`${text} 前${value * -1}`).css({
-            left: `calc(${distanceFromLeft}%)`,
-            transform: `translateX(-${distanceFromLeft}%)`,
-            marginTop: `-2.6rem`,
-            fontSize: `20px`,
-            bottom: `100%`,
-            textAlign: `center`,
-        });
-    } else {
-        $valueContainer.text(`${text} ${value}`).css({
-            left: `calc(${distanceFromLeft}%)`,
-            transform: `translateX(-${distanceFromLeft}%)`,
-            marginTop: `-2.6rem`,
-            fontSize: `20px`,
-            bottom: `100%`,
-            textAlign: `left`,
-        });
-    }
+    // value is ranged based on historical year
+    text = checkDynasty(value, text, backgroundImg);
+    updateValueContainer(value, min, max, $valueContainer, text);
 
     // Wrap the text into a link...
     // $valueContainer.contents().wrap('<a href=\"' + link + '\"></a>'); 
@@ -207,18 +210,17 @@ preloadImages([
 
 // link to other source when clicked on empty sapce of body 
 document.body.onclick = function(e) {
-        if (e.target === document.body) {
-            window.location = link;
-        }
+    if (e.target === document.body) {
+        window.location = link;
     }
-    // cookie
+}
 
-
+// cookie
 function setLoanCookie() {
     var selectedValue = document.getElementById("loan").value;
     // var selectedSlider = document.getElementById("")
     setCookie('testCookie', selectedValue);
-    console.log("Cookie set: ", selectedValue);
+    // console.log("Cookie set: ", selectedValue);
 }
 
 //sample cookie
@@ -232,8 +234,8 @@ function getCookie(cname) {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-            console.log("Getting cookie...");
-            console.log("cookie value: ", c.substring(name.length, c.length));
+            // console.log("Getting cookie...");
+            // console.log("cookie value: ", c.substring(name.length, c.length));
             return c.substring(name.length, c.length);
         }
     }
@@ -243,9 +245,5 @@ function getCookie(cname) {
 function setCookie(cname, value) {
     document.cookie = cname + '=' + value + ';' + ';path=/';
 }
-
-// setCookie('testCookie', 123);
-// console.log(getCookie('testCookie'));
-
 
 listenForSliderChanges();

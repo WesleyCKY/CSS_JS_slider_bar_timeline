@@ -28,19 +28,39 @@ label {
     right: 0vw;
     height: 1vh;
     width: 15vw;
-    padding: 1rem 0;
+    padding: 1rem;
     /* margin: 2rem; */
     background-color: rgb(212, 217, 230);
     outline: #100;
     /* -webkit-appearance: none; */
     text-align: center;
     align-items: center;
-    font-size: 3vh;
+    font-size: 2vh;
     border-radius: 25px;
+    /* width: 250px; */
+    /* padding: 5px; */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
 }
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
+    text-align: center;
+    align-items: center;
+    font-size: 2vh;
+    border-radius: 25px;
+    /* width: 250px; */
+    /* padding: 5px; */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
 }
 
 .tick {

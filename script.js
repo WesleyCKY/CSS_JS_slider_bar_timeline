@@ -5,6 +5,7 @@ let link = '';
 var $valueContainer;
 
 function onInputChangeUpdatePosition() {
+    console.log("onInputChangeUpdatePosition()...");
     let text = '';
     let backgroundImg = '';
     const $input = $(SLIDER_CONTAINER).find(SLIDER_RANGE_INPUT);
@@ -16,6 +17,7 @@ var tempVal = 2021;
 
 /** Initialize sliders and listen for value changes. */
 function listenForSliderChanges() {
+    console.log("listenForSliderChanges()...");
     $(SLIDER_CONTAINER).each(function() {
         // Prepend value container
         $valueContainer = $("<div />");
@@ -31,32 +33,63 @@ function listenForSliderChanges() {
     });
 }
 
+//update the text container while value is changing
 function updateValueContainer(value, min, max, $valueContainer, text) {
+    // console.log("updateValueContainer()...");
     const distanceFromLeft = ((value - min) * 100) / (max - min);
 
-    // Contain value within container bounds
     if (value < 0) {
-        $valueContainer.text(`${text} 前${value * -1}`).css({
+        console.log("(value < 0): ", value);
+        $valueContainer.text(`${text}\n 前${-value}`).css({
+            width: `7rem`,
+            whiteSpace: `pre-line`,
             left: `calc(${distanceFromLeft}%)`,
             transform: `translateX(-${distanceFromLeft}%)`,
-            marginTop: `-2.6rem`,
-            fontSize: `20px`,
+            marginTop: `-1.5rem`,
+            // marginBottom: `-1.6rem`,
+            fontSize: `3vh`,
+            bottom: `100%`,
+            textAlign: `bottom`,
+            display: `flex-end`,
+        });
+    }
+
+    if (value >= 0 && value <= 1911) {
+        // console.log("else: ", value);
+        $valueContainer.text(`${text}\n ${value}`).css({
+            whiteSpace: `pre-line`,
+            width: `5rem`,
+            left: `calc(${distanceFromLeft}%)`,
+            transform: `translateX(-${distanceFromLeft}%)`,
+            marginTop: `-1.5rem`,
+            // marginBottom: `-1.6rem`,
+            fontSize: `3vh`,
+            bottom: `100%`,
+            textAlign: `bottom`,
+            display: `flex-end`,
+        });
+    }
+
+    if (value >= 1912) {
+        // console.log("(value > 1912): ", value);
+        $valueContainer.text(`${text}\n ${value}`).css({
+            whiteSpace: `pre-line`,
+            width: `14rem`,
+            left: `calc(${distanceFromLeft}%)`,
+            transform: `translateX(-${distanceFromLeft}%)`,
+            marginTop: `-1.5rem`,
+            fontSize: `3vh`,
             bottom: `100%`,
             textAlign: `center`,
-        });
-    } else {
-        $valueContainer.text(`${text} ${value}`).css({
-            left: `calc(${distanceFromLeft}%)`,
-            transform: `translateX(-${distanceFromLeft}%)`,
-            marginTop: `-2.6rem`,
-            fontSize: `20px`,
-            bottom: `100%`,
-            textAlign: `left`,
+            display: `flex-top`,
+            color: `#b50929`,
+            textShadow: `-1px -1px 0 rgb(255, 255, 255)`,
         });
     }
 
 }
 
+// check which dynasty it is and change the background
 function checkDynasty(value, text, backgroundImg) {
     // value is ranged based on historical year
     if (value <= -771) {
@@ -138,7 +171,7 @@ function checkDynasty(value, text, backgroundImg) {
     } else {
         text = "不符合";
     }
-
+    // change the body backgrond
     document.body.style.backgroundImage = backgroundImg;
     return text;
 }

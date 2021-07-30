@@ -9,13 +9,9 @@ label {
     position: absolute;
     text-align: right;
     font-weight: bold;
-    /* -webkit-appearance: none; */
     height: 2vh;
     margin: 1rem;
-    /* transform: translateY(-89.5vh) translateY(-0.5px) translateX(-28px) translateX(28vw); */
-    text-shadow: -2px -2px 0 #999, -2px -2px 0 #999, -2px -2px 0 #999, -2px -2px 0 #999;
-    /* margin-right: 1rem; */
-    /* outline: #100; */
+    text-shadow: -2px -2px 0 rgb(255, 255, 255), -2px -2px 0 rgb(255, 255, 255), -2px -2px 0 rgb(255, 255, 255), -2px -2px 0 rgb(255, 255, 255);
 }
 
 
@@ -23,22 +19,17 @@ label {
 
 .range__amount {
     position: absolute;
-    /* transform: translateY(-91vh) translateX(-40px) translateX(40vw); */
     top: -50vh;
     right: 0vw;
     height: 1vh;
     width: 15vw;
     padding: 1rem;
-    /* margin: 2rem; */
     background-color: rgb(212, 217, 230);
     outline: #100;
-    /* -webkit-appearance: none; */
     text-align: center;
     align-items: center;
     font-size: 2vh;
     border-radius: 25px;
-    /* width: 250px; */
-    /* padding: 5px; */
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;
